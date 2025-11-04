@@ -29,7 +29,9 @@ def test_k_big():
 
 def test_duplicates():
     arr = [3,3,3,2,2,1]
-    assert sort_k_sorted(arr, 3) == [1,2,2,3,3,3]
+    # This array requires k >= 5 to be k-sorted (1 is 5 positions away),
+    # so use k=5 here to match the k-sorted precondition.
+    assert sort_k_sorted(arr, 5) == [1,2,2,3,3,3]
 
 # --- complex (3) ---
 def test_already_sorted_large_k():
